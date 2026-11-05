@@ -1,0 +1,121 @@
+{
+  "id": "com.example.sac.executivekpicard",
+  "version": "1.0.0",
+  "name": "Executive KPI Card",
+  "description": "Configurable executive KPI card for SAP Analytics Cloud Optimized Stories.",
+  "newInstancePrefix": "ExecutiveKPI",
+  "vendor": "Example",
+  "eula": "",
+  "license": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-example-sac-executive-kpi",
+      "url": "https://YOUR-PROJECT.pages.dev/executive-kpi.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "KPI title",
+      "default": "Revenue"
+    },
+    "actualValue": {
+      "type": "string",
+      "description": "Actual KPI value",
+      "default": "AED 128.6M"
+    },
+    "budgetValue": {
+      "type": "string",
+      "description": "Budget value",
+      "default": "AED 120.0M"
+    },
+    "achievement": {
+      "type": "string",
+      "description": "Achievement percentage",
+      "default": "107.2%"
+    },
+    "growth": {
+      "type": "string",
+      "description": "Growth versus previous year",
+      "default": "+12.5%"
+    },
+    "periodLabel": {
+      "type": "string",
+      "description": "Period description",
+      "default": "Actual MTD"
+    },
+    "statusLabel": {
+      "type": "string",
+      "description": "Status badge",
+      "default": "Above Budget"
+    },
+    "accentColor": {
+      "type": "string",
+      "description": "Accent color",
+      "default": "#159B67"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "description": "Card background color",
+      "default": "#FFFFFF"
+    }
+  },
+  "methods": {
+    "setKpiData": {
+      "description": "Sets the displayed KPI values.",
+      "parameters": [
+        {
+          "name": "actual",
+          "type": "string",
+          "description": "Actual value"
+        },
+        {
+          "name": "budget",
+          "type": "string",
+          "description": "Budget value"
+        },
+        {
+          "name": "achievement",
+          "type": "string",
+          "description": "Achievement percentage"
+        },
+        {
+          "name": "growth",
+          "type": "string",
+          "description": "Growth versus previous year"
+        }
+      ],
+      "body": "this.actualValue = actual; this.budgetValue = budget; this.achievement = achievement; this.growth = growth;"
+    },
+    "setTitle": {
+      "description": "Changes the KPI title.",
+      "parameters": [
+        {
+          "name": "newTitle",
+          "type": "string",
+          "description": "New KPI title"
+        }
+      ],
+      "body": "this.title = newTitle;"
+    },
+    "setAccentColor": {
+      "description": "Changes the accent color.",
+      "parameters": [
+        {
+          "name": "newColor",
+          "type": "string",
+          "description": "CSS color"
+        }
+      ],
+      "body": "this.accentColor = newColor;"
+    }
+  },
+  "events": {
+    "onKpiClick": {
+      "description": "Fired when the KPI card is clicked."
+    }
+  }
+}
